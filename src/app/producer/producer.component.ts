@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { environment } from '../../environments/environment';
 import { MockService } from '../services/mock.service';
+import { Project } from '../services/project';
 
 @Component({
   selector: 'app-producer-home',
@@ -10,14 +11,13 @@ import { MockService } from '../services/mock.service';
 })
 export class ProducerComponent implements OnInit {
 
-  items: any[];
-
+  items: Project[];
   version: string = environment.version;
-
   constructor(private _mockService: MockService) { }
 
   ngOnInit() {
-    this._mockService.getProjects().then(projects => this.items = projects);
+    this._mockService.getProjects().then(
+      projects => this.items = projects);
   }
 
 

@@ -13,11 +13,13 @@ export class MockService {
         return Promise.resolve(PROJECTS)
             .then(projects => projects.find(x => x.id === id));
     }
+
+    insertProject(entity: any) {
+        entity.id = PROJECTS[PROJECTS.length - 1].id;
+        entity.featured = 'Featured for you';
+        entity.title = entity.quantity + ' tons of ' + entity.product + ' by ' + entity.deliveryTime;
+        entity.text = 'Deliver on ' + entity.incoterm + ', baseline price of $' + entity.price;
+        entity.daysAgo = '0',
+            PROJECTS.unshift(entity);
+    }
 }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

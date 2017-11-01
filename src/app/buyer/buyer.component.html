@@ -9,15 +9,15 @@
         </p>
     </div>
     <div class="content">
-        <form id="buyerform">
+        <form id="buyerform" name="buyerForm">
             <div class="form-group">
                 <label for="inputProjectTitle" translate>buyer.project_title</label>
-                <input type="text" class="form-control" id="inputProjectTitle">
+                <input type="text" class="form-control" name="projectTitle" id="inputProjectTitle" [(ngModel)]="buyerForm.internalTitle">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputProduct" translate>buyer.product</label>
-                    <select id="inputProduct" class="form-control">
+                    <select id="inputProduct" class="form-control" name="product" [(ngModel)]="buyerForm.product">
                         <option selected translate>buyer.choose</option>
                         <option translate>products.corn</option>
                         <option translate>products.wheat</option>
@@ -25,18 +25,18 @@
                     </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputQuality" translate>buyer.quantity</label>
-                    <input type="number" class="form-control" id="inputQuality">
+                    <label for="inputQuantity" translate>buyer.quantity</label>
+                    <input type="number" class="form-control" id="inputQuantity" name="quantity" [(ngModel)]="buyerForm.quantity">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputQuality" translate>buyer.quality</label>
-                <input type="text" class="form-control" id="inputQuality" placeholder="">
+                <input type="text" class="form-control" id="inputQuality" placeholder="" name="quality" [(ngModel)]="buyerForm.quality">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputDeliveryTime" translate>buyer.delivery_time</label>
-                    <input type="date" class="form-control" id="inputDeliveryTime" placeholder="">
+                    <input type="date" class="form-control" id="inputDeliveryTime" placeholder="" name="deliveryTime" [(ngModel)]="buyerForm.deliveryTime">
                 </div>
                 <div class="form-group col-md-6">
 
@@ -44,12 +44,12 @@
             </div>
             <div class="form-group">
                 <label for="inputDeliveryLocation" translate>buyer.delivery_location</label>
-                <input type="text" class="form-control" id="inputDeliveryLocation" placeholder="">
+                <input type="text" class="form-control" id="inputDeliveryLocation" placeholder="" name="deliveryLocation" [(ngModel)]="buyerForm.deliveryLocation">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputProduct" translate>buyer.incoterm</label>
-                    <select id="inputProduct" class="form-control">
+                    <select id="inputProduct" class="form-control"  [(ngModel)]="buyerForm.incoterm" name="incoterm">
                         <option selected translate>buyer.choose</option>
                         <option translate>EXV</option>
                         <option translate>FCA</option>
@@ -66,19 +66,19 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPrice" translate>buyer.price</label>
-                    <input type="number" class="form-control" name="price" id="inputPrice" [(ngModel)]="buyerform.price"> {{buyerform.price | currency:'USD':false}}
+                    <input type="number" class="form-control" name="price" id="inputPrice"  [(ngModel)]="buyerForm.price"> {{buyerForm.price | currency:'USD':false}}
                 </div>
             </div>
 
             <div class="jumbotron text-center">
                 <span translate>buyer.required_tokens</span>
-                <strong>{{buyerform.price/800 | number:'3.1-5'}}</strong>
+                <strong>{{buyerForm.price/800 | number:'3.1-5'}}</strong>
                 <div>
                     <span translate>buyer.tokens_available</span>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" translate>btn.save_for_later</button>
-            <button type="submit" class="btn btn-secondary" translate>btn.initiate</button>
+            <button type="submit" class="btn btn-primary"  (click)="draft()"  translate>btn.save_for_later</button>
+            <button type="submit" class="btn btn-secondary"  (click)="submit(buyerForm)"  translate>btn.initiate</button>
         </form>
     </div>
 </div>
