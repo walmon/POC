@@ -40,6 +40,7 @@
     "standard": "Tal como la red lo define"
   },
   "btn":{
+    "back": "Volver",
     "save_for_later":"Guardar para después",
     "initiate":"Iniciar solicitud",
     "calculate_costs": "Ayuda en calcular mis costos",
