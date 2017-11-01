@@ -1,0 +1,49 @@
+/*
+ * Global application theme.
+ * Framework overrides and customization goes here.
+ */
+
+
+$dark-green:#002111;
+$white:#fff;
+@import 'theme-variables';
+
+ .bg-dark{
+    background: $dark-green !important;
+ }
+
+ .btn.btn-primary{
+    border-radius: 2px;
+    background:$dark-green;
+    border-color:$dark-green;
+ }
+
+ .btn.btn-secondary{
+    border-radius: 2px;
+    background:$white;
+    color:$dark-green;
+    border-color:$dark-green;
+ }
+.card{
+    margin: 4px 0;
+    .card-block {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        padding: 1.25rem;
+    }
+}
+
+input.form-control, select.form-control, textarea.form-control{
+    background:$gray-100;
+    border:none;
+    &:active, &:focus{
+        background:$gray-200;
+        border:none;
+    }
+}
+
+span.form-control{
+    background:$gray-400;
+}

@@ -1,0 +1,50 @@
+{
+  "APP_NAME": "Sibú",
+  "About": "About",
+  "Welcome": "Hello world !",
+  "Home": "Home",
+  "Version": "Version",
+  "Investor": "Investor",
+  "Producer": "Producer",
+  "Buyer": "Buyer",
+  "prospect_project": "Prospect Project",
+  "matched_projects": "Matched Projects",
+  "project_details":"Project Details",
+  "crowdfunding":"Crowdfunding",
+  "demo": "Proof of Concept",
+  "buyer": {
+    "project_title": "Internal Project Title",
+    "product": "Product",
+    "choose": "Choose...",
+    "quantity": "Quantity",
+    "quality": "Quality",
+    "delivery_time": "Delivery Time",
+    "delivery_location": "Delivery Physical Location",
+    "incoterm": "Preferred Incoterms",
+    "price": "Baseline Price (USD)",
+    "required_tokens": "Calculated Required Tokens (SIB)",
+    "tokens_available": "You have 125,000 SIB tokens available"
+  },
+  "producer":{
+    "price":"Baseline Price",
+    "crowdfunding":"Crowdfunding Goal",
+    "ROI":"ROI for investors",
+    "funds_needed":"Why I need funds"
+  },
+  "products": {
+    "corn": "Corn",
+    "wheat": "Wheat",
+    "rice": "Rice"
+  },
+  "quality": {
+    "standard": "As defined by the network"
+  },
+  "btn": {
+    "save_for_later": "Save for later",
+    "initiate": "Initiate request",
+    "calculate_costs": "Help me calculate my costs",
+    "request_crowdfunding": "Start crowdfunding",
+    "read_more":"Read More",
+    "not_interested":"Not interested"
+  }
+}

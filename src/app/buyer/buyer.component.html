@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>
+            <span translate>prospect_project</span>
+        </h1>
+        <p>
+            <i class="fa fa-bookmark-o"></i>
+            <span translate>demo</span>
+        </p>
+    </div>
+    <div class="content">
+        <form id="buyerform">
+            <div class="form-group">
+                <label for="inputProjectTitle" translate>buyer.project_title</label>
+                <input type="text" class="form-control" id="inputProjectTitle">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputProduct" translate>buyer.product</label>
+                    <select id="inputProduct" class="form-control">
+                        <option selected translate>buyer.choose</option>
+                        <option translate>products.corn</option>
+                        <option translate>products.wheat</option>
+                        <option translate>products.rice</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputQuality" translate>buyer.quantity</label>
+                    <input type="number" class="form-control" id="inputQuality">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputQuality" translate>buyer.quality</label>
+                <input type="text" class="form-control" id="inputQuality" placeholder="">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputDeliveryTime" translate>buyer.delivery_time</label>
+                    <input type="date" class="form-control" id="inputDeliveryTime" placeholder="">
+                </div>
+                <div class="form-group col-md-6">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputDeliveryLocation" translate>buyer.delivery_location</label>
+                <input type="text" class="form-control" id="inputDeliveryLocation" placeholder="">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputProduct" translate>buyer.incoterm</label>
+                    <select id="inputProduct" class="form-control">
+                        <option selected translate>buyer.choose</option>
+                        <option translate>EXV</option>
+                        <option translate>FCA</option>
+                        <option translate>FAS</option>
+                        <option translate>FOB</option>
+                        <option translate>CFR</option>
+                        <option translate>CIF</option>
+                        <option translate>CPT</option>
+                        <option translate>CIP</option>
+                        <option translate>DAT</option>
+                        <option translate>DAP</option>
+                        <option translate>DDP</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPrice" translate>buyer.price</label>
+                    <input type="number" class="form-control" name="price" id="inputPrice" [(ngModel)]="buyerform.price"> {{buyerform.price | currency:'USD':false}}
+                </div>
+            </div>
+
+            <div class="jumbotron text-center">
+                <span translate>buyer.required_tokens</span>
+                <strong>{{buyerform.price/800 | number:'3.1-5'}}</strong>
+                <div>
+                    <span translate>buyer.tokens_available</span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary" translate>btn.save_for_later</button>
+            <button type="submit" class="btn btn-secondary" translate>btn.initiate</button>
+        </form>
+    </div>
+</div>

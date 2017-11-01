@@ -1,0 +1,50 @@
+{
+  "APP_NAME": "Sibú",
+  "About": "Acerca de",
+  "Welcome": "Bienvenido",
+  "Home": "Inicio",
+  "Version": "Versión",
+  "Investor": "Inversor",
+  "Producer": "Productor",
+  "Buyer":"Comprador",
+  "prospect_project":"Propuesta de Proyecto",
+  "matched_projects": "Proyectos Relevantes",
+  "project_details":"Detalles de Proyecto",
+  "crowdfunding":"Crowdfunding",
+  "demo":"Prueba de Concepto",
+  "buyer":{
+    "project_title":"Nombre Interno de Proyecto",
+    "product": "Producto",
+    "choose":"Escoger...",
+    "quantity":"Cantidad",
+    "quality":"Calidad",
+    "delivery_time":"Fecha de Entrega",
+    "delivery_location":"Ubicación Física de Entrega",
+    "incoterm":"Incoterms Preferido",
+    "price":"Precio Base (USD)",
+    "required_tokens": "Tokens Requeridos (SIB)",
+    "tokens_available": "Tienes 125,000 SIB tokens disponibles"
+  },
+  "producer":{
+    "price":"Precio base",
+    "crowdfunding":"Meta del Crowdfunding",
+    "ROI":"Retorno para los inversores",
+    "funds_needed":"Para que necesito fondos"
+  },
+  "products":{
+    "corn":"Maíz",
+    "wheat":"Trigo",
+    "rice":"Arroz"
+  },
+  "quality": {
+    "standard": "Tal como la red lo define"
+  },
+  "btn":{
+    "save_for_later":"Guardar para después",
+    "initiate":"Iniciar solicitud",
+    "calculate_costs": "Ayuda en calcular mis costos",
+    "request_crowdfunding": "Iniciar crowdfunding",
+    "read_more":"Leer Más",
+    "not_interested":"No estoy interesado"
+  }
+}
