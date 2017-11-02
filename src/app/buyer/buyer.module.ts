@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
-
+import { SharedModule } from '../shared/shared.module';
 
 import { BuyerRoutingModule } from './buyer-routing.module';
 import { BuyerComponent } from './buyer.component';
@@ -12,7 +12,8 @@ import { BuyerComponent } from './buyer.component';
     CommonModule,
     TranslateModule,
     BuyerRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   declarations: [
     BuyerComponent

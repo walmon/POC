@@ -19,6 +19,12 @@ export class ProducerComponent implements OnInit {
     this._mockService.getProjects().then(
       projects => this.items = projects);
   }
-
+  notInterested(id: string) {
+    console.log(id);
+    this._mockService.removeProject(id).then(projects => {
+      this.items = projects;
+      console.log(projects);
+    });
+  }
 
 }

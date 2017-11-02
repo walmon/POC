@@ -13,11 +13,12 @@ import { MockService } from '../services/mock.service';
 export class ProducerDetailComponent implements OnInit {
 
   buyerform: any = {};
-
+  people: any = {};
   producerForm = {
     price: 0,
     crowdfunding: 0
   };
+
   version: string = environment.version;
 
   constructor(private _mockService: MockService,
@@ -31,6 +32,12 @@ export class ProducerDetailComponent implements OnInit {
         this.buyerform = item;
       });
     });
+    this._mockService.getPeople().then(
+      people => {
+        console.log(people);
+        this.people = people;
+      }
+    );
   }
 
 }

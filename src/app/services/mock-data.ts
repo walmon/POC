@@ -89,3 +89,16 @@ export let PROJECTS: Project[] = [
 ];
 
 
+export let PEOPLE = {
+    buyer: {
+        name: 'John Doe',
+        country: 'Niger',
+        reputation: '4.5',
+        joined: '1/1/2018'
+    }, producer: {
+        name: 'Bill Gates',
+        country: 'Chile',
+        reputation: '4.3',
+        joined: '1/1/2018'
+    }
+};

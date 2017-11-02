@@ -6,6 +6,7 @@ import { ProducerRoutingModule } from './producer-routing.module';
 import { ProducerComponent } from './producer.component';
 import { ProducerDetailComponent } from './producer-detail.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     TranslateModule,
     ProducerRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   declarations: [
     ProducerComponent,

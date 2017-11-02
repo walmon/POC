@@ -1,7 +1,7 @@
 {
   "APP_NAME": "Sibú",
   "About": "About",
-  "Welcome": "Hello world !",
+  "Welcome": "Hello world!",
   "Home": "Home",
   "Version": "Version",
   "Investor": "Investor",
@@ -9,6 +9,7 @@
   "Buyer": "Buyer",
   "prospect_project": "Prospect Project",
   "matched_projects": "Matched Projects",
+  "deals":"Matched Deals",
   "project_details":"Project Details",
   "crowdfunding":"Crowdfunding",
   "demo": "Proof of Concept",
