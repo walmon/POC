@@ -4,7 +4,7 @@ import { Project } from './project';
 
 @Injectable()
 export class MockService {
-    getLatestId() {
+    getLatestProjectId() {
         let latest: number = localStorage.getItem('latestId') ?
             Number(localStorage.getItem('latestId')) :
             0;
@@ -17,7 +17,20 @@ export class MockService {
                 JSON.stringify(latest + 1));
             return latest + 1;
         }
-
+    }
+    getLatestCrowdfundingId() {
+        let latest: number = localStorage.getItem('latestCrId') ?
+            Number(localStorage.getItem('latestCrId')) :
+            0;
+        if (latest === 0) {
+            localStorage.setItem('latestCrId',
+                JSON.stringify(1));
+            return 1;
+        } else {
+            localStorage.setItem('latestCrId',
+                JSON.stringify(latest + 1));
+            return latest + 1;
+        }
     }
     updateDatabase(_projects: Project[]) {
         localStorage.setItem('projects', JSON.stringify(_projects));
@@ -27,6 +40,15 @@ export class MockService {
             this.updateDatabase(PROJECTS);
         }
         return JSON.parse(localStorage.getItem('projects'));
+    }
+    retrieveCrowdfunding(): any[] {
+        if (!localStorage.getItem('crowdfunding')) {
+            this.updateCrowdfunding([]);
+        }
+        return JSON.parse(localStorage.getItem('crowdfunding'));
+    }
+    updateCrowdfunding(items: any[]) {
+        localStorage.setItem('crowdfunding', JSON.stringify(items));
     }
     getProjects(): Promise<Project[]> {
         return Promise.resolve(this.retrieveDatabase());
@@ -50,7 +72,7 @@ export class MockService {
     }
 
     insertProject(entity: any) {
-        entity.id = JSON.stringify(this.getLatestId());
+        entity.id = JSON.stringify(this.getLatestProjectId());
 
         entity.featured = 'Featured for you';
         entity.title = entity.quantity + ' tons of ' + entity.product + ' by ' + entity.deliveryTime;
@@ -67,5 +89,23 @@ export class MockService {
 
     getPeople() {
         return Promise.resolve(PEOPLE);
+    }
+
+    insertCrowdfunding(crowdfunding: any) {
+        let items = this.retrieveCrowdfunding();
+        crowdfunding.id = JSON.stringify(this.getLatestCrowdfundingId());
+        items.unshift(crowdfunding);
+        this.updateCrowdfunding(items);
+        return items;
+    }
+    getCrowdfundings(): any[] {
+        return this.retrieveCrowdfunding();
+    }
+    getCrowdfunding(id: string): any {
+        console.log(id);
+        let crowdfundings = this.retrieveCrowdfunding() || [];
+        console.log(crowdfundings);
+        return crowdfundings.filter(x =>
+            x.id === id)[0];
     }
 }

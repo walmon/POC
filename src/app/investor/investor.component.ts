@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { environment } from '../../environments/environment';
+import { MockService } from '../services/mock.service';
 
 @Component({
   selector: 'app-investor-home',
@@ -10,9 +11,12 @@ import { environment } from '../../environments/environment';
 export class InvestorComponent implements OnInit {
 
   version: string = environment.version;
+  items: any[] = [];
 
-  constructor() { }
+  constructor(private _mockService: MockService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.items = this._mockService.getCrowdfundings();
+  }
 
 }

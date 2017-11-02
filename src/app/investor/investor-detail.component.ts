@@ -6,20 +6,20 @@ import { environment } from '../../environments/environment';
 import { MockService } from '../services/mock.service';
 
 @Component({
-  selector: 'app-producer-detail',
-  templateUrl: './producer-detail.component.html',
-  styleUrls: ['./producer-detail.component.scss']
+  selector: 'app-investor-detail',
+  templateUrl: './investor-detail.component.html',
+  styleUrls: ['./investor-detail.component.scss']
 })
-export class ProducerDetailComponent implements OnInit {
+export class InvestorDetailComponent implements OnInit {
 
   buyerform: any = {};
+  crowdfundingform: any = {};
+
   people: any = {};
   producerForm = {
     price: 0,
     crowdfunding: 0
   };
-
-  id: any = null;
 
   version: string = environment.version;
 
@@ -28,9 +28,10 @@ export class ProducerDetailComponent implements OnInit {
 
   ngOnInit() {
     this._routeParams.params.subscribe((params: Params) => {
-      this.id = params['id'];
-      this._mockService.getProject(this.id).then(item => {
-        console.log(item);
+      const id = params['id'];
+      this.crowdfundingform = this._mockService.getCrowdfunding(id);
+      console.log(this.crowdfundingform);
+      this._mockService.getProject(this.crowdfundingform.projectId).then(item => {
         this.buyerform = item;
       });
     });
@@ -43,7 +44,6 @@ export class ProducerDetailComponent implements OnInit {
   }
 
   startCrowdfunding(form: any) {
-    form.projectId = this.id;
     this._mockService.insertCrowdfunding(form);
     alert('Crowdfunding started');
   }

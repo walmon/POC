@@ -1,14 +1,34 @@
 <div class="container-fluid">
-    <div class="jumbotron text-center">
-      <h1>
-        <span translate>deals</span>
-      </h1>
-      <p>
-        <i class="fa fa-bookmark-o"></i> <span translate>Version</span> {{version}}
-      </p>
-    </div>
-    <div>
-      
+  <div class="jumbotron text-center">
+    <h1>
+      <span translate>deals</span>
+    </h1>
+    <p>
+      <i class="fa fa-bookmark-o"></i>
+      <span translate>Version</span> {{version}}
+    </p>
+  </div>
+  <div class="row">
+
+    <div class="col-sm-4" *ngFor="let item of items">
+      <div class="card text-center">
+        <div ngShow="item.featured" class="card-header" translate>
+          Featured for you
+        </div>
+        <div class="card-block">
+          <h4 class="card-title">
+            {{item.crowdfunding | currency:'USD':false}}
+          </h4>
+          <p class="card-text">
+            Potential return: {{item.ROI}}%
+          </p>
+          <a routerLink="/investor/{{item.id}}" class="btn btn-primary" translate>btn.read_more</a>
+          <a class="btn btn-secondary" (click)="notInterested(item.id)" translate>btn.not_interested</a>
+        </div>
+        <div class="card-footer text-muted">
+            Project size: {{item.price | currency:'USD':false}}
+        </div>
+      </div>
     </div>
   </div>
-  
+</div>
